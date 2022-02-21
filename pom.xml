@@ -27,44 +27,6 @@
 
     <profiles>
         <profile>
-            <id>lwjgl-natives-macos-x86_64</id>
-            <activation>
-                <os>
-                    <family>mac</family>
-                    <arch>x86_64</arch>
-                </os>
-            </activation>
-            <properties>
-                <lwjgl.natives>natives-macos</lwjgl.natives>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.lwjgl</groupId>
-                    <artifactId>lwjgl-vulkan</artifactId>
-                    <classifier>natives-macos</classifier>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
-        <id>lwjgl-natives-macos-aarch64</id>
-        <activation>
-            <os>
-                <family>mac</family>
-                <arch>aarch64</arch>
-            </os>
-        </activation>
-        <properties>
-            <lwjgl.natives>natives-macos-arm64</lwjgl.natives>
-        </properties>
-        <dependencies>
-            <dependency>
-                <groupId>org.lwjgl</groupId>
-                <artifactId>lwjgl-vulkan</artifactId>
-                <classifier>natives-macos-arm64</classifier>
-            </dependency>
-        </dependencies>
-        </profile>
-        <profile>
             <id>lwjgl-natives-windows-amd64</id>
             <activation>
                 <os>
