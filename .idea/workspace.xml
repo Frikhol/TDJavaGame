@@ -1,8 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="72660347-041f-4f15-8e16-2b8ada8c5c60" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="72660347-041f-4f15-8e16-2b8ada8c5c60" name="Default Changelist" comment="wtf">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Camera.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DisplayManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DisplayManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/KeyboardInput.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/KeyboardInput.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Loader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Loader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Game.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Maths.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Maths.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ModelTexture.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ModelTexture.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/RawModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/RawModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Renderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Renderer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ShaderProgram.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ShaderProgram.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/StaticShader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/StaticShader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Texture.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Texture.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TexturedModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TexturedModel.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,34 +40,32 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="25KcCXRbBJh1ZFKM5wPU6LSh5Wb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/TWMPv4/TWMPv4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TWMPv4/TWMPv4" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\DanShilADM\IdeaProjects\Game" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -60,6 +81,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -72,5 +94,33 @@
       <updated>1645279091934</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="wtf" />
+    <option name="LAST_COMMIT_MESSAGE" value="wtf" />
   </component>
 </project>
