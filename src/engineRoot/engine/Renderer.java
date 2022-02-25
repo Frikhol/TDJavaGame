@@ -39,7 +39,7 @@ public class Renderer {
 
     protected void createProjectionMatrix(){//ДОРАБОТАТЬ!!!
         int width = glfwGetVideoMode(glfwGetPrimaryMonitor()).width(),height = glfwGetVideoMode(glfwGetPrimaryMonitor()).height();
-        System.out.println("new width"+width);
+        System.out.println("new width " + width);
         float aspectRatio = (float)width/height;
         projectionMatrix = new Matrix4f();
         projectionMatrix.identity();

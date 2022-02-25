@@ -12,7 +12,7 @@ public class Camera {
     private GLFWKeyCallback keyCallback;
 
     public Camera(){
-        glfwSetKeyCallback(DisplayManager.getWindowID(), keyCallback = new KeyboardInput());
+        glfwSetKeyCallback(GameDisplay.getID(), keyCallback = new KeyboardInput());
     }
 
     public void move(){
