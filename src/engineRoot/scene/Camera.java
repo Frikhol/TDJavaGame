@@ -11,9 +11,7 @@ public class Camera {
     private float roll;
     private GLFWKeyCallback keyCallback;
 
-    public Camera(){
-        glfwSetKeyCallback(GameDisplay.getID(), keyCallback = new KeyboardInput());
-    }
+    public Camera(){glfwSetKeyCallback(GameDisplay.getID(), keyCallback = new KeyboardInput());}
 
     public void move(){
         if(KeyboardInput.isKeyDown(GLFW_KEY_W)){

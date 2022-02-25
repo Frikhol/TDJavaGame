@@ -13,6 +13,7 @@ public class GameEngine {
     private static Renderer renderer;
     private static Camera camera;
     private static Entity entity;
+    private static Light light;
 
     public static Camera getCamera(){return camera;}
     public static Entity getEntity(){return entity;}
@@ -37,7 +38,7 @@ public class GameEngine {
         ModelTexture texture = new ModelTexture(Loader.loadTexture("stallTexture.png").getId());
         TexturedModel texturedModel = new TexturedModel(model,texture);
         entity = new Entity(texturedModel,new Vector3f(0,-5,-20),0,0,0,1);
-
+        light = new Light(new Vector3f(0,0,-10),new Vector3f(1,1,1));
     }
 
     public static void loop() {
@@ -48,6 +49,7 @@ public class GameEngine {
         //========================================================== -----//----- ====================================================================
         camera.move();
         shader.start();
+        shader.loadLight(light);
         shader.loadViewMatrix(camera);
         renderer.render(entity,shader);
         shader.stop();
