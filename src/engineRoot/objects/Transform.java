@@ -1,43 +1,62 @@
 import org.joml.Vector3f;
 
-public class Transform {
+class Transform {
     private Vector3f position;
     private Vector3f rotation;
     private float scale;
-
-    public Transform(Vector3f position, Vector3f rotation, float scale) {
+    Transform(Vector3f position, Vector3f rotation) {
         this.position = position;
         this.rotation = rotation;
-        this.scale = scale;
+        this.scale = 1;
     }
 
-    public void rotate(Vector3f rotation){
+    void rotate(Vector3f rotation){
         this.rotation.x += rotation.x;
         this.rotation.y += rotation.y;
         this.rotation.z += rotation.z;
     }
 
-    public Vector3f getPosition() {
+    void rotateX(float x){ this.rotation.x += x;}
+
+    void rotateY(float y){ this.rotation.y += y;}
+
+    void rotateZ(float z){ this.rotation.z += z;}
+
+    void translate(Vector3f translation){
+        this.position.x += translation.x;
+        this.position.y += translation.y;
+        this.position.z += translation.z;
+    }
+
+    void translateX(float x){ this.position.x += x;}
+
+    void translateY(float y){ this.position.y += y;}
+
+    void translateZ(float z){ this.position.z += z;}
+
+    void scale(float scale){ this.scale *= scale;}
+
+    Vector3f getPosition() {
         return position;
     }
 
-    public void setPosition(Vector3f position) {
+    void setPosition(Vector3f position) {
         this.position = position;
     }
 
-    public Vector3f getRotation() {
+    Vector3f getRotation() {
         return rotation;
     }
 
-    public void setRotation(Vector3f rotation) {
+    void setRotation(Vector3f rotation) {
         this.rotation = rotation;
     }
 
-    public float getScale() {
+    float getScale() {
         return scale;
     }
 
-    public void setScale(float scale) {
+    void setScale(float scale) {
         this.scale = scale;
     }
 }

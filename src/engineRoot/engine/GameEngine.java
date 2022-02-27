@@ -25,13 +25,6 @@ public class GameEngine {
         renderer = new MasterRenderer();
         GLFWKeyCallback keyCallback  = new KeyboardInput();
         glfwSetKeyCallback(GameDisplay.getID(), keyCallback);
-
-        //RawModel model = OBJLoader.loadObjModel("dragon",loader);
-        //Mesh mesh = new Mesh(model,new MeshTexture(Loader.loadTexture("white.png").getId()));
-        //MeshTexture texture = mesh.getTexture();
-        //texture.setShineDamper(30);
-        //texture.setReflectivity(0.3f);
-        //entity = new Entity(mesh,new Vector3f(0,-5,-20),0,0,0,1);
     }
 
     public static void loop() {

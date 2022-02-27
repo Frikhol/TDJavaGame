@@ -31,6 +31,7 @@ public class GameDisplay {
         glfwWindowHint(GLFW_VISIBLE, GL_FALSE); // the window will stay hidden after creation
         glfwWindowHint(GLFW_RESIZABLE, GL_TRUE); // the window will be resizable
         displayID = glfwCreateWindow(WIDTH, HEIGHT, "My first display!", NULL, NULL);
+        glfwSetWindowSize(displayID,1920,1080);
         if (displayID == NULL) {
             throw new RuntimeException("Failed to create the GLFW window");
         }

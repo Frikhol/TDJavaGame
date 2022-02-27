@@ -2,36 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72660347-041f-4f15-8e16-2b8ada8c5c60" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/res/dragon.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/engineRoot/engine/MasterRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/engineRoot/models/MeshTexture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/engineRoot/objects/Transform.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/engineRoot/scene/Scene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/DanShilADM.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/DanShilADM.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docs.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engineRoot/display/GameDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/display/GameDisplay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engineRoot/engine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/engine/GameEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engineRoot/engine/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/engine/Renderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engineRoot/models/ModelTexture.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engineRoot/models/TexturedModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/models/Mesh.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engineRoot/scene/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/scene/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engineRoot/shaders/StaticShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/shaders/StaticShader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engineRoot/shaders/fragmentShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/shaders/fragmentShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engineRoot/shaders/vertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/shaders/vertexShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engineRoot/toolBox/KeyboardInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/toolBox/KeyboardInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engineRoot/toolBox/Maths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/toolBox/Maths.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engineRoot/models/Mesh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/objects/Mesh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engineRoot/models/MeshTexture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/objects/MeshTexture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engineRoot/models/RawModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/objects/RawModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engineRoot/models/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/objects/Texture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engineRoot/objects/Transform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/objects/Transform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engineRoot/scene/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/objects/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameRoot/mainGame/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameRoot/mainGame/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GameEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GameEngine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/KeyboardInput.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/KeyboardInput.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Maths.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Maths.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ModelTexture.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Renderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Renderer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/StaticShader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/StaticShader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TexturedModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fragmentShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fragmentShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vertexShader.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,17 +48,17 @@
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\DanShilADM\IdeaProjects\Game\res" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\DanShilADM\IdeaProjects\Game\res" />
       <recent name="C:\Users\DanShilADM\IdeaProjects\Game\src\engineRoot" />
       <recent name="C:\Users\DanShilADM\IdeaProjects\Game\src\Stuff" />
       <recent name="C:\Users\DanShilADM\IdeaProjects\Game" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DanShilADM\IdeaProjects\Game\res" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -138,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645924811162</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Bil logic rebuild">
+      <created>1645966118483</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1645966118483</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -187,6 +176,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Lights added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lights added" />
+    <MESSAGE value="Bil logic rebuild" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bil logic rebuild" />
   </component>
 </project>
