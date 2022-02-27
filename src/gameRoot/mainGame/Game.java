@@ -23,6 +23,7 @@ public class Game {
 
     public void update(){
         GameEngine.getEntity().increaseRotation(0,0.5f,0);
+
     }
 
 

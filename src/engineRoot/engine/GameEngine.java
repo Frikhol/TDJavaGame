@@ -1,4 +1,5 @@
 import org.joml.Vector3f;
+import org.lwjgl.glfw.GLFWKeyCallback;
 
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.glfw.GLFW.glfwSetKeyCallback;
@@ -6,7 +7,9 @@ import static org.lwjgl.opengl.GL11.*;
 
 public class GameEngine {
 
-    private static long polygonMode = GL_FILL;
+    private static int polygonMode = GL_FILL;
+
+
 
     private static Loader loader;
     private static StaticShader shader;
@@ -26,19 +29,14 @@ public class GameEngine {
         shader = new StaticShader();
         renderer = new Renderer(shader);
         camera = new Camera();
-        glfwSetKeyCallback(GameDisplay.getID(), (window, key, scancode, action, mods) -> {  //Changing polygon mode
-            if (key == GLFW_KEY_F1 && action == GLFW_RELEASE) {
-                if(polygonMode == GL_FILL)
-                    glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
-                else glPolygonMode( GL_FRONT_AND_BACK, GL_FILL );
-            }
-        });
-
+        GLFWKeyCallback keyCallback;
+        glfwSetKeyCallback(GameDisplay.getID(), keyCallback = new KeyboardInput());
         RawModel model = OBJLoader.loadObjModel("stall",loader);
         ModelTexture texture = new ModelTexture(Loader.loadTexture("stallTexture.png").getId());
         TexturedModel texturedModel = new TexturedModel(model,texture);
+        //glfwSetKeyCallback(GameDisplay.getID(), keyCallback = new KeyboardInput());
         entity = new Entity(texturedModel,new Vector3f(0,-5,-20),0,0,0,1);
-        light = new Light(new Vector3f(0,0,-10),new Vector3f(1,1,1));
+        light = new Light(new Vector3f(0,0,0),new Vector3f(1,1,1));
     }
 
     public static void loop() {
@@ -47,6 +45,11 @@ public class GameEngine {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glClearColor(0.0f, 0.0f, 0.0f, 0.0f); //background's color
         //========================================================== -----//----- ====================================================================
+        if (KeyboardInput.isKeyDown(GLFW_KEY_F1)!=GLFW_RELEASE) {
+            if(polygonMode == GL_FILL) polygonMode = GL_LINE;
+            else polygonMode = GL_FILL;
+            glPolygonMode(GL_FRONT_AND_BACK, polygonMode);
+        }
         camera.move();
         shader.start();
         shader.loadLight(light);

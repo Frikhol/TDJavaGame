@@ -9,22 +9,21 @@ public class Camera {
     private float pitch;
     private float yaw;
     private float roll;
-    private GLFWKeyCallback keyCallback;
 
-    public Camera(){glfwSetKeyCallback(GameDisplay.getID(), keyCallback = new KeyboardInput());}
+    public Camera(){}
 
     public void move(){
-        if(KeyboardInput.isKeyDown(GLFW_KEY_W)){
-            position.z-=0.02f;
+        if(KeyboardInput.isKeyDown(GLFW_KEY_W)!=GLFW_RELEASE){
+            position.z-=0.1f;
         }
-        if(KeyboardInput.isKeyDown(GLFW_KEY_D)){
-            position.x+=0.02f;
+        if(KeyboardInput.isKeyDown(GLFW_KEY_D)!=GLFW_RELEASE){
+            position.x+=0.1f;
         }
-        if(KeyboardInput.isKeyDown(GLFW_KEY_A)){
-            position.x-=0.02f;
+        if(KeyboardInput.isKeyDown(GLFW_KEY_A)!=GLFW_RELEASE){
+            position.x-=0.1f;
         }
-        if(KeyboardInput.isKeyDown(GLFW_KEY_S)){
-            position.z+=0.02f;
+        if(KeyboardInput.isKeyDown(GLFW_KEY_S)!=GLFW_RELEASE){
+            position.z+=0.1f;
         }
     }
 
