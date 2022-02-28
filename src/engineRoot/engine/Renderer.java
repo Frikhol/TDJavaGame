@@ -7,8 +7,7 @@ import org.lwjgl.opengl.GL30;
 import java.util.List;
 import java.util.Map;
 
-import static org.lwjgl.glfw.GLFW.glfwGetPrimaryMonitor;
-import static org.lwjgl.glfw.GLFW.glfwGetVideoMode;
+import static org.lwjgl.glfw.GLFW.*;
 
 public class Renderer {
 
@@ -68,9 +67,10 @@ public class Renderer {
         shader.loadTransformationMatrix(transformationMatrix);
     }
 
-    protected void createProjectionMatrix(){//ДОРАБОТАТЬ!!!
-        int width = glfwGetVideoMode(glfwGetPrimaryMonitor()).width(),height = glfwGetVideoMode(glfwGetPrimaryMonitor()).height();
-        System.out.println("ДОРАБОТАТЬ ФУНКЦИЮ createProjectionMatrix" );
+    protected void createProjectionMatrix(){
+        glfwGetWindowSize(GameDisplay.getID(),GameDisplay.getWIDTH(),GameDisplay.getHEIGHT());
+        int width = GameDisplay.getWIDTH()[0];
+        int height = GameDisplay.getHEIGHT()[0];
         float aspectRatio = (float)width/height;
         projectionMatrix = new Matrix4f();
         projectionMatrix.identity();

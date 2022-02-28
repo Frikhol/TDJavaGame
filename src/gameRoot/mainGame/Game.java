@@ -30,7 +30,7 @@ public class Game {
     }
 
     private void update(){
-        sceneList.get(0).getCamera().move();
+        sceneList.get(0).getCamera().move(); //Adding camera moving control
         sceneList.get(0).getGameObjectList().get(0).rotate(new Vector3f(0,0.5f,0));
     }
 

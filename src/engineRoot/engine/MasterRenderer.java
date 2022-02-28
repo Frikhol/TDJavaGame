@@ -18,6 +18,10 @@ public class MasterRenderer {
         entities.clear();
     }
 
+    public Renderer getRenderer() {
+        return renderer;
+    }
+
     public void processEntity(GameObject gameObject){
         Mesh entityModel = gameObject.getMesh();
         List<GameObject> batch = entities.get(entityModel);

@@ -1,4 +1,5 @@
 import org.lwjgl.glfw.GLFWKeyCallback;
+import org.lwjgl.glfw.GLFWWindowSizeCallback;
 
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.glfw.GLFW.glfwSetKeyCallback;
@@ -25,6 +26,7 @@ public class GameEngine {
         renderer = new MasterRenderer();
         GLFWKeyCallback keyCallback  = new KeyboardInput();
         glfwSetKeyCallback(GameDisplay.getID(), keyCallback);
+        checkWindowResize();
     }
 
     public static void loop() {
@@ -43,6 +45,16 @@ public class GameEngine {
         for(GameObject object: scene.getGameObjectList()){
             renderer.processEntity(object);
         }
+    }
+
+    private static void checkWindowResize(){
+        GLFWWindowSizeCallback sizeCallback = new GLFWWindowSizeCallback() {
+            public void invoke(long window, int w, int h) {
+                glViewport(0,0,w,h);
+                renderer.getRenderer().createProjectionMatrix();
+            }
+        };
+        glfwSetWindowSizeCallback(GameDisplay.getID(), sizeCallback);
     }
 
     public static void stop(){
