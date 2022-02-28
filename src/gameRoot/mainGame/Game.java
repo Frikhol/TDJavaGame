@@ -19,6 +19,8 @@ public class Game {
         sceneList.get(0).loadGameObject("dragon","white");
         sceneList.get(0).getGameObjectList().get(0).setTransform(new Transform(new Vector3f(0,-5,-25),new Vector3f(0,0,0)));
         GameEngine.setScene(sceneList.get(0));
+        GameEngine.getCurrentScene().setKeyList(new TestControlCamera());
+
         //Main game loop
         while(!glfwWindowShouldClose(GameDisplay.getID())){ //while not closed
             update(); // USE THIS FUNCTION FOR GAME LOGIC UPDATE TO
@@ -30,7 +32,6 @@ public class Game {
     }
 
     private void update(){
-        sceneList.get(0).getCamera().move(); //Adding camera moving control
         sceneList.get(0).getGameObjectList().get(0).rotate(new Vector3f(0,0.5f,0));
     }
 
@@ -38,4 +39,5 @@ public class Game {
     private void close(){
 
     }
+
 }

@@ -12,6 +12,10 @@ public class GameEngine {
     private static MasterRenderer renderer;
     private static Scene scene;
 
+    public static Scene getCurrentScene() {
+        return scene;
+    }
+
     public static Loader getLoader() {
         return loader;
     }

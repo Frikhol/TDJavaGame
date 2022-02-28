@@ -1,10 +1,18 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Scene {
     private List<GameObject> gameObjectList = new ArrayList<GameObject>();
     private Light light;
     private Camera camera;
+    private KeyList keyList = null;
+    public void setKeyList(KeyList keyList) {
+        this.keyList = keyList;
+    }
+    public KeyList getKeyList(){
+        return keyList;
+    }
 
     public Scene(Light light, Camera camera) {
         this.light = light;
