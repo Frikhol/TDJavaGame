@@ -1,0 +1,14 @@
+GameObject methods:
+
+translate(Vector3f xyz)
+translateX(float x)
+translateY(float y)
+translateZ(float z)
+
+rotate(Vector3f rotation)
+rotateX(float x)
+rotateY(float y)
+rotateZ(float z)
+
+scale(float scale)
+
