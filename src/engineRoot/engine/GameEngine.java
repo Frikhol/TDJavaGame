@@ -1,5 +1,4 @@
-import org.lwjgl.glfw.GLFWKeyCallback;
-import org.lwjgl.glfw.GLFWWindowSizeCallback;
+import org.joml.Vector3f;
 
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.glfw.GLFW.glfwSetKeyCallback;
@@ -7,58 +6,56 @@ import static org.lwjgl.opengl.GL11.*;
 
 public class GameEngine {
 
+    private static long polygonMode = GL_FILL;
 
     private static Loader loader;
-    private static MasterRenderer renderer;
-    private static Scene scene;
+    private static StaticShader shader;
+    private static Renderer renderer;
+    private static Camera camera;
+    private static Entity entity;
 
-    public static Loader getLoader() {
-        return loader;
-    }
-
-    public static void setScene(Scene scene) {
-        GameEngine.scene = scene;
-    }
+    public static Camera getCamera(){return camera;}
+    public static Entity getEntity(){return entity;}
+    public static void setCamera(Camera camera) {GameEngine.camera = camera;}
+    public static void setEntity(Entity entity) {GameEngine.entity = entity;}
 
     public static void start(){
         GameDisplay.create();
         loader = new Loader();
-        renderer = new MasterRenderer();
-        GLFWKeyCallback keyCallback  = new KeyboardInput();
-        glfwSetKeyCallback(GameDisplay.getID(), keyCallback);
-        checkWindowResize();
+        shader = new StaticShader();
+        renderer = new Renderer(shader);
+        camera = new Camera();
+        glfwSetKeyCallback(GameDisplay.getID(), (window, key, scancode, action, mods) -> {  //Changing polygon mode
+            if (key == GLFW_KEY_F1 && action == GLFW_RELEASE) {
+                if(polygonMode == GL_FILL)
+                    glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
+                else glPolygonMode( GL_FRONT_AND_BACK, GL_FILL );
+            }
+        });
+
+        RawModel model = OBJLoader.loadObjModel("stall",loader);
+        ModelTexture texture = new ModelTexture(Loader.loadTexture("stallTexture.png").getId());
+        TexturedModel texturedModel = new TexturedModel(model,texture);
+        entity = new Entity(texturedModel,new Vector3f(0,-5,-20),0,0,0,1);
+
     }
 
     public static void loop() {
         //========================================================== DON'T DELETE ====================================================================
         glfwPollEvents();
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        glClearColor(0.74902f,  0.847059f, 0.847059f, 0.0f); //background's color
+        glClearColor(0.0f, 0.0f, 0.0f, 0.0f); //background's color
         //========================================================== -----//----- ====================================================================
-
-        processGameObjects();
-        renderer.render(scene.getLight(),scene.getCamera());
+        camera.move();
+        shader.start();
+        shader.loadViewMatrix(camera);
+        renderer.render(entity,shader);
+        shader.stop();
         glfwSwapBuffers(GameDisplay.getID()); // Don't delete
     }
 
-    private static void processGameObjects(){
-        for(GameObject object: scene.getGameObjectList()){
-            renderer.processEntity(object);
-        }
-    }
-
-    private static void checkWindowResize(){
-        GLFWWindowSizeCallback sizeCallback = new GLFWWindowSizeCallback() {
-            public void invoke(long window, int w, int h) {
-                glViewport(0,0,w,h);
-                renderer.getRenderer().createProjectionMatrix();
-            }
-        };
-        glfwSetWindowSizeCallback(GameDisplay.getID(), sizeCallback);
-    }
-
     public static void stop(){
-        renderer.cleanUp();
+        shader.cleanUp();
         loader.cleanUP();
         GameDisplay.close();
         glfwTerminate();
