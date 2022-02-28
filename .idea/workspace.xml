@@ -1,49 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="72660347-041f-4f15-8e16-2b8ada8c5c60" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/res/stall.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/stallTexture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/engineRoot/display/GameDisplay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/engineRoot/engine/GameEngine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/engineRoot/engine/OBJLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gameRoot/mainGame/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="72660347-041f-4f15-8e16-2b8ada8c5c60" name="Default Changelist" comment="бэкапп">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/scene/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/scene/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/DisplayManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/engine/Loader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/engine/Renderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/input/KeyboardInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/toolBox/KeyboardInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mainGame/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/RawModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/models/RawModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/TexturedModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/models/TexturedModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/ShaderProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/shaders/ShaderProgram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/StaticShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/shaders/StaticShader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/fragmentShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/shaders/fragmentShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/vertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/shaders/vertexShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/textures/ModelTexture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/models/ModelTexture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/textures/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/models/Texture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/toolBox/Maths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineRoot/toolBox/Maths.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Camera.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DisplayManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/KeyboardInput.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/KeyboardInput.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Loader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Loader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Maths.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Maths.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ModelTexture.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ModelTexture.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/RawModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/RawModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Renderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Renderer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ShaderProgram.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ShaderProgram.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/StaticShader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/StaticShader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Texture.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Texture.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TexturedModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TexturedModel.class" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,39 +22,32 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="25KcCXRbBJh1ZFKM5wPU6LSh5Wb" />
   <component name="PropertiesComponent">
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/TWMPv4/TWMPv4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TWMPv4/TWMPv4" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\DanShilADM\IdeaProjects\Game\src\engineRoot" />
       <recent name="C:\Users\DanShilADM\IdeaProjects\Game\src\Stuff" />
       <recent name="C:\Users\DanShilADM\IdeaProjects\Game\res" />
       <recent name="C:\Users\DanShilADM\IdeaProjects\Game" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Game">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -134,11 +90,22 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="COLUMN_ORDER" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/GameRep" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
             </State>
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
