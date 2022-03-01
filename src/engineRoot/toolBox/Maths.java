@@ -1,7 +1,17 @@
 import org.joml.Matrix4f;
+import org.joml.Vector2f;
 import org.joml.Vector3f;
 
 public class Maths {
+
+    public static Matrix4f createTransformationMatrix(Vector2f translation, Vector2f scale){
+        Matrix4f matrix = new Matrix4f();
+        matrix.identity();
+        matrix.translate(new Vector3f(translation.x,translation.y,.0f));
+        matrix.scale(new Vector3f(scale.x,scale.y,1f));
+        return matrix;
+    }
+
     public static Matrix4f createTransformationMatrix(Vector3f translation, Vector3f rotation, float scale){
         Matrix4f matrix = new Matrix4f();
         matrix.identity();

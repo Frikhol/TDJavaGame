@@ -13,6 +13,7 @@ public class GameDisplay {
     private static long displayID;
     private static int[] WIDTH = new int[1]; //make changeable
     private static int[] HEIGHT = new int[1]; //make changeable
+    private static int FPS;
 
     public static long getID(){
         return displayID;
@@ -52,6 +53,10 @@ public class GameDisplay {
         glfwShowWindow(displayID);
         GL.createCapabilities();
         glEnable(GL_DEPTH_TEST);
+    }
+
+    public void showFPS(){
+
     }
 
     public static void close() {

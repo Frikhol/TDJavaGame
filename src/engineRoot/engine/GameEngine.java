@@ -10,7 +10,9 @@ public class GameEngine {
 
     private static Loader loader;
     private static MasterRenderer renderer;
+    private static GUIRenderer guiRenderer;
     private static Scene scene;
+
 
     public static Scene getCurrentScene() {
         return scene;
@@ -20,7 +22,7 @@ public class GameEngine {
         return loader;
     }
 
-    public static void setScene(Scene scene) {
+    public static void setCurrentScene(Scene scene) {
         GameEngine.scene = scene;
     }
 
@@ -28,6 +30,7 @@ public class GameEngine {
         GameDisplay.create();
         loader = new Loader();
         renderer = new MasterRenderer();
+        guiRenderer = new GUIRenderer(loader);
         GLFWKeyCallback keyCallback  = new KeyboardInput();
         glfwSetKeyCallback(GameDisplay.getID(), keyCallback);
         checkWindowResize();
@@ -42,6 +45,7 @@ public class GameEngine {
 
         processGameObjects();
         renderer.render(scene.getLight(),scene.getCamera());
+        //guiRenderer.render(scene.getGUI());
         glfwSwapBuffers(GameDisplay.getID()); // Don't delete
     }
 
@@ -62,6 +66,7 @@ public class GameEngine {
     }
 
     public static void stop(){
+        guiRenderer.cleanUp();
         renderer.cleanUp();
         loader.cleanUP();
         GameDisplay.close();

@@ -18,7 +18,7 @@ public class Game {
         sceneList.add(new Scene(new Light(new Vector3f(1000,1000,2000),new Vector3f(1,1,1)),new Camera()));
         sceneList.get(0).loadGameObject("dragon","white");
         sceneList.get(0).getGameObjectList().get(0).setTransform(new Transform(new Vector3f(0,-5,-25),new Vector3f(0,0,0)));
-        GameEngine.setScene(sceneList.get(0));
+        GameEngine.setCurrentScene(sceneList.get(0));
         GameEngine.getCurrentScene().setKeyList(new TestControlCamera());
 
         //Main game loop

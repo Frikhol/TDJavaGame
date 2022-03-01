@@ -3,13 +3,18 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Scene {
+
     private List<GameObject> gameObjectList = new ArrayList<GameObject>();
+    //private GUI currentGUI;        GUI object here with GUI list on it
     private Light light;
     private Camera camera;
+
     private KeyList keyList = null;
+
     public void setKeyList(KeyList keyList) {
         this.keyList = keyList;
     }
+
     public KeyList getKeyList(){
         return keyList;
     }
