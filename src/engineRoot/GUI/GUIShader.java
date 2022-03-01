@@ -2,8 +2,8 @@ import org.joml.Matrix4f;
 
 public class GUIShader extends ShaderProgram{
 
-    private static final String VERTEX_FILE = "src/GUI/GUIVertexShader.txt";
-    private static final String FRAGMENT_FILE = "src/GUI/GUIFragmentShader.txt";
+    private static final String VERTEX_FILE = "src/engineRoot/GUI/GUIVertexShader.txt";
+    private static final String FRAGMENT_FILE = "src/engineRoot/GUI/GUIFragmentShader.txt";
 
     private int location_transformationMatrix;
 

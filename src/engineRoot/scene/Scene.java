@@ -5,7 +5,7 @@ import java.util.List;
 public class Scene {
 
     private List<GameObject> gameObjectList = new ArrayList<GameObject>();
-    //private GUI currentGUI;        GUI object here with GUI list on it
+    private GUI currentGUI;
     private Light light;
     private Camera camera;
 
@@ -26,6 +26,14 @@ public class Scene {
 
     public void loadGameObject(String modelName, String textureName){
         gameObjectList.add(new GameObject(new Mesh(OBJLoader.loadObjModel(modelName,GameEngine.getLoader()),new MeshTexture(Loader.loadTexture(textureName+".png").getId()))));
+    }
+
+    public GUI getCurrentGUI() {
+        return currentGUI;
+    }
+
+    public void setCurrentGUI(GUI currentGUI) {
+        this.currentGUI = currentGUI;
     }
 
     public List<GameObject> getGameObjectList (){

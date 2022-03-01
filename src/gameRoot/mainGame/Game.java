@@ -17,9 +17,12 @@ public class Game {
         GameEngine.start(); //Necessary Game Engine prepare
         sceneList.add(new Scene(new Light(new Vector3f(1000,1000,2000),new Vector3f(1,1,1)),new Camera()));
         sceneList.get(0).loadGameObject("dragon","white");
-        sceneList.get(0).getGameObjectList().get(0).setTransform(new Transform(new Vector3f(0,-5,-25),new Vector3f(0,0,0)));
+        sceneList.get(0).getGameObjectList().get(0).setTransform(new Transform(new Vector3f(0,-5,-5),new Vector3f(0,0,0)));
+        sceneList.get(0).setCurrentGUI(new GUI());
         GameEngine.setCurrentScene(sceneList.get(0));
         GameEngine.getCurrentScene().setKeyList(new TestControlCamera());
+        GameEngine.getCurrentScene().getCurrentGUI().add(new GUIPane((GameDisplay.getWIDTH()[0]-(GameDisplay.getWIDTH()[0]/4)),0,(GameDisplay.getWIDTH()[0]/4),(GameDisplay.getHEIGHT()[0]/4)));
+
 
         //Main game loop
         while(!glfwWindowShouldClose(GameDisplay.getID())){ //while not closed
