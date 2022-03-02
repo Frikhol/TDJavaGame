@@ -1,4 +1,5 @@
 import org.joml.Vector2f;
+import org.lwjgl.glfw.GLFW;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -44,6 +45,17 @@ public class GUI {
 
     public static Vector2f getScale(int width,int height){
         return new Vector2f((float)width/(float)(GameDisplay.getWIDTH()[0]),(float)height/(float)(GameDisplay.getHEIGHT()[0]));
+    }
+
+    public static void countFPS(){
+        int FPS = GameDisplay.getFps();
+        if( GLFW.glfwGetTime()>=1){
+            GameDisplay.setFPS(FPS);
+            GameDisplay.setFps(0);
+            GLFW.glfwSetTime(0);
+            System.out.println("FPS: "+FPS);
+        }
+        GameDisplay.setFps(GameDisplay.getFps()+1);
     }
 
 }

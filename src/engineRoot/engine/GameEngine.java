@@ -34,6 +34,7 @@ public class GameEngine {
         GLFWKeyCallback keyCallback  = new KeyboardInput();
         glfwSetKeyCallback(GameDisplay.getID(), keyCallback);
         checkWindowResize();
+        org.lwjgl.glfw.GLFW.glfwSetTime(0);
     }
 
     public static void loop() {
@@ -42,6 +43,7 @@ public class GameEngine {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glClearColor(0.74902f,  0.847059f, 0.847059f, 0.0f); //background's color
         //========================================================== -----//----- ====================================================================
+        GUI.countFPS();
         processGameObjects();
         renderer.render(scene.getLight(),scene.getCamera());
         guiRenderer.render(scene.getCurrentGUI().getGUIList());
