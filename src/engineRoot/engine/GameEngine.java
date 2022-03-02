@@ -31,23 +31,23 @@ public class GameEngine {
         loader = new Loader();
         renderer = new MasterRenderer();
         guiRenderer = new GUIRenderer(loader);
-        GLFWKeyCallback keyCallback  = new KeyboardInput();
-        glfwSetKeyCallback(GameDisplay.getID(), keyCallback);
+        glfwSetKeyCallback(GameDisplay.getID(), InputHandler.keyCallback);
         checkWindowResize();
-        org.lwjgl.glfw.GLFW.glfwSetTime(0);
+        glfwSetTime(0);
     }
 
     public static void loop() {
+        GameDisplay.setFPSCup(144);
         //========================================================== DON'T DELETE ====================================================================
-        glfwPollEvents();
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glClearColor(0.74902f,  0.847059f, 0.847059f, 0.0f); //background's color
         //========================================================== -----//----- ====================================================================
-        GUI.countFPS();
         processGameObjects();
         renderer.render(scene.getLight(),scene.getCamera());
         guiRenderer.render(scene.getCurrentGUI().getGUIList());
+        GameDisplay.countFPS();
         glfwSwapBuffers(GameDisplay.getID()); // Don't delete
+        glfwPollEvents();
     }
 
     private static void processGameObjects(){

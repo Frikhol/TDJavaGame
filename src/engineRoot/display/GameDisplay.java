@@ -1,3 +1,4 @@
+import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.opengl.GL;
@@ -13,7 +14,7 @@ public class GameDisplay {
     private static long displayID;
     private static int[] WIDTH = new int[1]; //make changeable
     private static int[] HEIGHT = new int[1]; //make changeable
-    private static int FPS;
+    private static int FPS = 144;
     private static int fps;
 
     public static void setFps(int fps) {
@@ -66,10 +67,31 @@ public class GameDisplay {
         GLFWVidMode vidMode = glfwGetVideoMode(glfwGetPrimaryMonitor());
         glfwSetWindowPos(displayID,(vidMode.width() - WIDTH[0]) / 2,(vidMode.height() - HEIGHT[0]) / 2);
         glfwMakeContextCurrent(displayID);
-        glfwSwapInterval(1);
+        glfwSwapInterval(0);
         glfwShowWindow(displayID);
         GL.createCapabilities();
         glEnable(GL_DEPTH_TEST);
+    }
+
+    public static void countFPS(){
+        int FPS = GameDisplay.getFps();
+        if( glfwGetTime()>=1){
+            GameDisplay.setFPS(FPS);
+            GameDisplay.setFps(0);
+            glfwSetTime(0);
+            //System.out.println("FPS: "+FPS);
+        }
+        GameDisplay.setFps(GameDisplay.getFps()+1);
+    }
+
+    public static void setFPSCup(int cup){
+        double lastTime = glfwGetTime();
+        while(glfwGetTime() < lastTime+1.0/cup){}
+        lastTime += 1.0/cup;
+    }
+
+    public static float deltaTime(){
+        return (float)fps/(float)FPS;
     }
 
     public static void close() {

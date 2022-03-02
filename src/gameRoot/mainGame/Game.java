@@ -21,7 +21,7 @@ public class Game {
         sceneList.get(0).setCurrentGUI(new GUI());
         GameEngine.setCurrentScene(sceneList.get(0));
         GameEngine.getCurrentScene().setKeyList(new TestControlCamera());
-        GameEngine.getCurrentScene().getCurrentGUI().add(new GUIPane((GameDisplay.getWIDTH()[0]-(GameDisplay.getWIDTH()[0]/4)),0,(GameDisplay.getWIDTH()[0]/4),(GameDisplay.getHEIGHT()[0]/4)));
+        GameEngine.getCurrentScene().getCurrentGUI().add(new GUIPane((GameDisplay.getWIDTH()[0]-(GameDisplay.getWIDTH()[0]/16)),0,(GameDisplay.getWIDTH()[0]/16),(GameDisplay.getHEIGHT()[0]/16)));
 
 
         //Main game loop
@@ -36,6 +36,7 @@ public class Game {
 
     private void update(){
         sceneList.get(0).getGameObjectList().get(0).rotate(new Vector3f(0,0.5f,0));
+
     }
 
 

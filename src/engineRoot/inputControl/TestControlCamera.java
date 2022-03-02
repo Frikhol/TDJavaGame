@@ -1,5 +1,3 @@
-import java.awt.event.KeyEvent;
-
 public class TestControlCamera implements KeyList {
     @Override
     public void release(int key, int mods) {
@@ -17,15 +15,16 @@ public class TestControlCamera implements KeyList {
     }
     void f(int key, int mods){
         if(key == KeyCode.GLFW_KEY_F1)
-            KeyboardInput.keyBindings();
+            InputHandler.keyBindings();
         Camera camera = GameEngine.getCurrentScene().getCamera();
         if(key == KeyCode.GLFW_KEY_S)
-            camera.getTransform().translateZ(.3f);
+            camera.getTransform().translateZ(1f);
         if(key == KeyCode.GLFW_KEY_W)
-            camera.getTransform().translateZ(-.3f);
+            camera.getTransform().translateZ(-1f);
         if(key == KeyCode.GLFW_KEY_A)
-            camera.getTransform().translateX(-.3f);
+            camera.getTransform().translateX(-1f);
         if(key == KeyCode.GLFW_KEY_D)
-            camera.getTransform().translateX(.3f);
+            camera.getTransform().translateX(1f);
+        System.out.println("deltaTime: "+GameDisplay.deltaTime());
     }
 }
