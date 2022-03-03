@@ -1,15 +1,15 @@
-public class TestControlCamera implements KeyList {
+public class TestControls implements KeyList {
     @Override
     public void down(int key, int mods) {
         Camera camera = GameEngine.getCurrentScene().getCamera();
         if(key == KeyCode.GLFW_KEY_S)
-            camera.getTransform().translateZ(.3f);
+            camera.getTransform().translateZ(.1f);
         if(key == KeyCode.GLFW_KEY_W)
-            camera.getTransform().translateZ(-.3f);
+            camera.getTransform().translateZ(-.1f);
         if(key == KeyCode.GLFW_KEY_A)
-            camera.getTransform().translateX(-.3f);
+            camera.getTransform().translateX(-.1f);
         if(key == KeyCode.GLFW_KEY_D)
-            camera.getTransform().translateX(.3f);
+            camera.getTransform().translateX(.1f);
     }
 
     @Override

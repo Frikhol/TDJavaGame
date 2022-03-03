@@ -1,6 +1,5 @@
 import org.lwjgl.glfw.GLFWKeyCallback;
 
-import static org.lwjgl.opengl.GL11.*;
 
 public class InputHandler{
 

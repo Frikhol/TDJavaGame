@@ -30,6 +30,14 @@ public class Loader {
         return new RawModel(vaoID,indices.length);
     }
 
+    public int loadToVAO(float[] positions,float[] textureCoords){
+        int vaoID = createVAO();
+        storeDataInAttributeList(0,2,positions);
+        storeDataInAttributeList(1,2,textureCoords);
+        unbindVAO();
+        return vaoID;
+    }
+
     public RawModel loadToVAO(float[] positions){
         int vaoID = createVAO();
         this.storeDataInAttributeList(0,2,positions);
@@ -54,8 +62,8 @@ public class Loader {
         int id = GL15.glGenTextures();
         GL11.glBindTexture(GL20.GL_TEXTURE_2D, id);
         GL11.glPixelStorei(GL20.GL_UNPACK_ALIGNMENT, 1);
-        GL11.glTexParameterf(GL20.GL_TEXTURE_2D, GL20.GL_TEXTURE_MIN_FILTER, GL20.GL_LINEAR);
-        GL11.glTexParameterf(GL20.GL_TEXTURE_2D, GL20.GL_TEXTURE_MAG_FILTER, GL20.GL_LINEAR);
+        GL11.glTexParameteri(GL20.GL_TEXTURE_2D, GL20.GL_TEXTURE_MIN_FILTER, GL20.GL_LINEAR_MIPMAP_LINEAR);
+        GL11.glTexParameterf(GL20.GL_TEXTURE_2D, GL20.GL_TEXTURE_LOD_BIAS, -0);
         GL11.glTexImage2D(GL20.GL_TEXTURE_2D, 0, GL20.GL_RGBA, decoder.getWidth(), decoder.getHeight(), 0, GL20.GL_RGBA, GL20.GL_UNSIGNED_BYTE, buffer);
         GL11.glEnable(GL20.GL_TEXTURE_2D);
         GL30.glGenerateMipmap(GL20.GL_TEXTURE_2D);

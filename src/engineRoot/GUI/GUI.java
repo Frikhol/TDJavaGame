@@ -1,10 +1,8 @@
 import org.joml.Vector2f;
-import org.lwjgl.glfw.GLFW;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.lwjgl.glfw.GLFW.glfwSwapInterval;
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL11.GL_FRONT_AND_BACK;
 

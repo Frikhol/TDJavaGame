@@ -1,4 +1,7 @@
+import org.joml.Vector2f;
 import org.lwjgl.glfw.GLFWWindowSizeCallback;
+
+import java.io.File;
 
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.glfw.GLFW.glfwSetKeyCallback;
@@ -30,6 +33,7 @@ public class GameEngine {
         loader = new Loader();
         renderer = new MasterRenderer();
         guiRenderer = new GUIRenderer(loader);
+        TextMaster.init(loader);
         glfwSetKeyCallback(GameDisplay.getID(), InputHandler.keyCallback);
         checkWindowResize();
         glfwSetTime(0);
@@ -42,9 +46,10 @@ public class GameEngine {
         glClearColor(0.74902f,  0.847059f, 0.847059f, 0.0f); //background's color
         //========================================================== -----//----- ====================================================================
         processGameObjects();
+        GameDisplay.countFPS();
         renderer.render(scene.getLight(),scene.getCamera());
         guiRenderer.render(scene.getCurrentGUI().getGUIList());
-        //GameDisplay.countFPS();
+        TextMaster.render();
         glfwSwapBuffers(GameDisplay.getID()); // Don't delete
         glfwPollEvents();
         InputHandler.getInputs();
@@ -67,6 +72,7 @@ public class GameEngine {
     }
 
     public static void stop(){
+        TextMaster.cleanUp();
         guiRenderer.cleanUp();
         renderer.cleanUp();
         loader.cleanUP();
