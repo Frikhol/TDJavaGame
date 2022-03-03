@@ -5,9 +5,12 @@ import java.util.LinkedList;
 import java.util.List;
 
 import static org.lwjgl.glfw.GLFW.glfwSwapInterval;
+import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL11.GL_FRONT_AND_BACK;
 
 public class GUI {
     private List<GUITexture> textureList;
+    private static int polygonMode = GL_FILL;
     public GUI(){
         textureList = new LinkedList<>();
     }
@@ -49,6 +52,9 @@ public class GUI {
         return new Vector2f((float)width/(float)(GameDisplay.getWIDTH()[0]),(float)height/(float)(GameDisplay.getHEIGHT()[0]));
     }
 
-
+    public static void changePolyMode(){
+        polygonMode = polygonMode == GL_FILL? GL_LINE: GL_FILL;
+        glPolygonMode(GL_FRONT_AND_BACK, polygonMode);
+    }
 
 }

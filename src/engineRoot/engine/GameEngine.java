@@ -1,4 +1,3 @@
-import org.lwjgl.glfw.GLFWKeyCallback;
 import org.lwjgl.glfw.GLFWWindowSizeCallback;
 
 import static org.lwjgl.glfw.GLFW.*;
@@ -45,9 +44,10 @@ public class GameEngine {
         processGameObjects();
         renderer.render(scene.getLight(),scene.getCamera());
         guiRenderer.render(scene.getCurrentGUI().getGUIList());
-        GameDisplay.countFPS();
+        //GameDisplay.countFPS();
         glfwSwapBuffers(GameDisplay.getID()); // Don't delete
         glfwPollEvents();
+        InputHandler.getInputs();
     }
 
     private static void processGameObjects(){

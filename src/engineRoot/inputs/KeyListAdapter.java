@@ -5,12 +5,12 @@ public interface KeyListAdapter extends KeyList{
     }
 
     @Override
-    default void release(int key, int mods){
+    default void pressed(int key, int mods){
 
     }
 
     @Override
-    default void hold(int key, int mods){
+    default void released(int key, int mods){
 
     }
 }
