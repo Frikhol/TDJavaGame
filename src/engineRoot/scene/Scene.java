@@ -1,13 +1,21 @@
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Scene {
 
+
+    private String name;
     private List<GameObject> gameObjectList = new ArrayList<GameObject>();
     private GUI currentGUI;
     private Light light;
     private Camera camera;
-
+    @JsonIgnore
     private KeyList keyList = null;
 
     public void setKeyList(KeyList keyList) {
@@ -18,13 +26,25 @@ public class Scene {
         return keyList;
     }
 
-    public Scene(Light light, Camera camera) {
+    public Scene(){
+    }
+
+    public Scene(String name,Light light, Camera camera) {
+        this.name = name;
         this.light = light;
         this.camera = camera;
     }
 
-    public void loadGameObject(String modelName, String textureName){
-        gameObjectList.add(new GameObject(new Mesh(OBJLoader.loadObjModel(modelName,GameEngine.getLoader()),new MeshTexture(Loader.loadTexture(textureName+".png").getId()))));
+    public Scene(String name,List<GameObject> gameObjectList,GUI currentGUI,Light light, Camera camera){
+        this.name = name;
+        for (GameObject gameObject : gameObjectList)
+            this.loadGameObject(gameObject.getModelName(), gameObject.getTextureName(), gameObject.getTransform());
+        this.currentGUI = currentGUI;
+        this.light = light;
+        this.camera = camera;
+    }
+    public void loadGameObject(String modelName, String textureName, Transform transform){
+        gameObjectList.add(new GameObject(modelName,textureName,transform));
     }
 
     public GUI getCurrentGUI() {
@@ -37,6 +57,11 @@ public class Scene {
 
     public List<GameObject> getGameObjectList (){
         return gameObjectList;
+    }
+
+    public void setGameObjectList(List<GameObject> gameObjectList) {
+        for (GameObject gameObject : gameObjectList)
+            this.loadGameObject(gameObject.getModelName(), gameObject.getTextureName(),gameObject.getTransform());
     }
 
     public Light getLight() {
@@ -53,5 +78,35 @@ public class Scene {
 
     public void setCamera(Camera camera) {
         this.camera = camera;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void saveScene(){
+        ObjectMapper mapper = new ObjectMapper();
+
+        // Java object to JSON file
+        try {
+            mapper.writeValue(new File("res/save.json"), this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static Scene loadScene(String name){
+        ObjectMapper mapper = new ObjectMapper();
+        Scene scene = new Scene();
+        try {
+            scene = mapper.readValue(new File("res/save.json"), Scene.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return scene;
     }
 }
