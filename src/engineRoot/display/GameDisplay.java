@@ -91,7 +91,7 @@ public class GameDisplay {
     }
 
     public static float deltaTime(){
-        return (float)fps/(float)FPS;
+        return 1/(float)FPS;
     }
 
     public static void close() {
