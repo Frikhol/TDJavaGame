@@ -20,26 +20,22 @@ public class IntroMenu extends JFrame implements IntroMenuI {
         main.add(playButton);
         main.add(currentSceneLabel);
         main.add(loadButton);
-        //main.add(saveButton);
         main.add(exitButton);
         loadButton.addActionListener(e->loadAction());
+        fileChooser.addActionListener(e -> {});
         getContentPane().add(main);
         setVisible(true);
     }
 
     private void loadAction(){
-        //if(!loaded){
-            fileChooser.addActionListener(e -> {});
-            int status = fileChooser.showOpenDialog(this);
-            if (status == JFileChooser.APPROVE_OPTION) {
-                sceneFile = fileChooser.getSelectedFile().toString().substring(fileChooser.getSelectedFile().toString().indexOf("res\\"));
-                currentSceneLabel.setText("Current scene: " + sceneFile.substring(sceneFile.lastIndexOf("\\")+1,sceneFile.indexOf(".json")));
-                loaded = true;
-            } else if (status == JFileChooser.CANCEL_OPTION) {
-                JOptionPane.showMessageDialog(this, "Choose file to load");
-            }
-        //}
-        //else JOptionPane.showMessageDialog(this, "Already loaded!");
+        int status = fileChooser.showOpenDialog(this);
+        if (status == JFileChooser.APPROVE_OPTION) {
+            sceneFile = fileChooser.getSelectedFile().toString().substring(fileChooser.getSelectedFile().toString().indexOf("res\\"));
+            currentSceneLabel.setText("Current scene: " + sceneFile.substring(sceneFile.lastIndexOf("\\")+1,sceneFile.indexOf(".json")));
+            loaded = true;
+        } else if (status == JFileChooser.CANCEL_OPTION) {
+            JOptionPane.showMessageDialog(this, "Choose file to load");
+        }
     }
 
     public String getSceneFile() {

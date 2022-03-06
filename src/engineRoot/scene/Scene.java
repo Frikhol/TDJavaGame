@@ -15,6 +15,7 @@ public class Scene {
     private GUI currentGUI;
     private Light light;
     private Camera camera;
+    @JsonIgnore
     private ObjectMapper mapper = new ObjectMapper();
     @JsonIgnore
     private KeyList keyList = null;

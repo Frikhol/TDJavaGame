@@ -25,10 +25,9 @@ public class Game {
             else {
                 intro.played = true;
                 intro.setVisible(false);
-                game.run();
+                game.start();
             }
         });
-        //intro.getSaveButton().addActionListener(e->saveAction());
         intro.getExitButton().addActionListener(e->{
             intro.dispatchEvent(new WindowEvent(intro, WindowEvent.WINDOW_CLOSING));
             System.exit(0);
@@ -36,11 +35,9 @@ public class Game {
     }
 
     private void saveAction() {
-        JFileChooser fileChooser = intro.getFileChooser();
-        fileChooser.addActionListener(ev -> {});
-        int status = fileChooser.showSaveDialog(null);
+        int status = intro.getFileChooser().showSaveDialog(null);
         if (status == JFileChooser.APPROVE_OPTION) {
-            String saveFile = fileChooser.getSelectedFile().getName();
+            String saveFile = intro.getFileChooser().getSelectedFile().getName();
             if (!saveFile.contains(".json"))
                 scene.saveScene("res/saves/" + saveFile + ".json");
             else
@@ -49,7 +46,7 @@ public class Game {
         }
     }
 
-    private void run(){
+    public void start(){
         GameEngine.start();
         scene = scene.loadScene(intro.getSceneFile());
         GameEngine.setCurrentScene(scene);
@@ -76,6 +73,5 @@ public class Game {
         GameEngine.stop();
         intro.setVisible(true);
     }
-
 
 }

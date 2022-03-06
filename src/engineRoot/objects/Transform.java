@@ -24,16 +24,28 @@ class Transform {
     }
 
     public void rotate(Vector3f rotation){
-        this.rotation.x += rotation.x;
-        this.rotation.y += rotation.y;
-        this.rotation.z += rotation.z;
+        if((this.rotation.x += rotation.x) > 360.0f)
+            this.rotation.x -= 360.0f;
+        if((this.rotation.y += rotation.y) > 360.0f)
+            this.rotation.y -= 360.0f;
+        if((this.rotation.z += rotation.z) > 360.0f)
+            this.rotation.z -= 360.0f;
     }
 
-    public void rotateX(float x){ this.rotation.x += x;}
+    public void rotateX(float x){
+        if((this.rotation.x += x) > 360.0f)
+            this.rotation.x -= 360.0f;
+    }
 
-    public void rotateY(float y){ this.rotation.y += y;}
+    public void rotateY(float y){
+        if((this.rotation.y += y) > 360.0f)
+        this.rotation.y -= 360.0f;
+    }
 
-    public void rotateZ(float z){ this.rotation.z += z;}
+    public void rotateZ(float z){
+        if((this.rotation.z += z) > 360.0f)
+        this.rotation.z -= 360.0f;
+    }
 
     public void translate(Vector3f translation){
         this.position.x += translation.x;
