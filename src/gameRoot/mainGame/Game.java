@@ -1,4 +1,3 @@
-import IntroMenu.IntroMenu;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
 
@@ -8,45 +7,20 @@ import java.io.File;
 
 import static org.lwjgl.glfw.GLFW.glfwWindowShouldClose;
 
-public class Game {
-    private static Game game = new Game();
+public class Game implements Runnable{
     private static Scene scene = new Scene();
     private static IntroMenu intro;
 
+    public  Scene getScene() {
+        return scene;
+    }
+
     public static void main(String[] args){
         intro = new IntroMenu();
-        game.menu();
     }
 
-    private void menu(){
-        intro.getPlayButton().addActionListener(e->{
-            if(!intro.loaded)
-                JOptionPane.showMessageDialog(intro, "Must to load scene before!");
-            else {
-                intro.played = true;
-                intro.setVisible(false);
-                game.start();
-            }
-        });
-        intro.getExitButton().addActionListener(e->{
-            intro.dispatchEvent(new WindowEvent(intro, WindowEvent.WINDOW_CLOSING));
-            System.exit(0);
-        });
-    }
 
-    private void saveAction() {
-        int status = intro.getFileChooser().showSaveDialog(null);
-        if (status == JFileChooser.APPROVE_OPTION) {
-            String saveFile = intro.getFileChooser().getSelectedFile().getName();
-            if (!saveFile.contains(".json"))
-                scene.saveScene("res/saves/" + saveFile + ".json");
-            else
-                scene.saveScene("res/saves/" + saveFile);
-            JOptionPane.showMessageDialog(intro, "Saving success");
-        }
-    }
-
-    public void start(){
+     public void run(){
         GameEngine.start();
         scene = scene.loadScene(intro.getSceneFile());
         GameEngine.setCurrentScene(scene);
@@ -61,14 +35,24 @@ public class Game {
             update();
             GameEngine.loop();
         }
-        game.close();
+        close();
     }
 
-    private void update(){
+    private  void update(){
         scene.getGameObjectList().get(0).rotate(new Vector3f(0,0.5f,0));
     }
-
-    private void close(){
+    private void saveAction(){
+        int status = intro.fileChooser.showSaveDialog(null);
+        if (status == JFileChooser.APPROVE_OPTION) {
+            String saveFile = intro.fileChooser.getSelectedFile().getName();
+            if (!saveFile.contains(".json"))
+                getScene().saveScene("res/saves/" + saveFile + ".json");
+            else
+                getScene().saveScene("res/saves/" + saveFile);
+            JOptionPane.showMessageDialog(intro, "Saving success");
+        }
+    }
+    private  void close(){
         saveAction();
         GameEngine.stop();
         intro.setVisible(true);

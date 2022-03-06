@@ -1,12 +1,12 @@
-package IntroMenu;
-
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowEvent;
 
 public class IntroMenu extends JFrame implements IntroMenuI {
     private String sceneFile = "";
     public boolean loaded = false;
     public boolean played = false;
+    private Game game= new Game();
     public IntroMenu(){
         super("IntroMenu");
         setSize(512,256);
@@ -22,6 +22,8 @@ public class IntroMenu extends JFrame implements IntroMenuI {
         main.add(loadButton);
         main.add(exitButton);
         loadButton.addActionListener(e->loadAction());
+        exitButton.addActionListener(e->exitAction());
+        playButton.addActionListener(e->playAction());
         fileChooser.addActionListener(e -> {});
         getContentPane().add(main);
         setVisible(true);
@@ -40,5 +42,19 @@ public class IntroMenu extends JFrame implements IntroMenuI {
 
     public String getSceneFile() {
         return sceneFile;
+    }
+
+    private void exitAction(){
+        dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+        System.exit(0);
+    }
+    private void playAction(){
+        if(!loaded)
+            JOptionPane.showMessageDialog(this, "Must to load scene before!");
+        else {
+            played = true;
+            setVisible(false);
+            new Thread(game).start();
+        }
     }
 }
