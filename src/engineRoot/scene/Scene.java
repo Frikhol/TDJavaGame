@@ -88,25 +88,25 @@ public class Scene {
         this.name = name;
     }
 
-    public void saveScene(){
+    public void saveScene(String saveFile){
         ObjectMapper mapper = new ObjectMapper();
-
-        // Java object to JSON file
         try {
-            mapper.writeValue(new File("res/save.json"), this);
+            mapper.writeValue(new File(saveFile), this);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        mapper.clearProblemHandlers();
     }
 
-    public static Scene loadScene(String name){
+    public Scene loadScene(String loadFile){
         ObjectMapper mapper = new ObjectMapper();
         Scene scene = new Scene();
         try {
-            scene = mapper.readValue(new File("res/save.json"), Scene.class);
+            scene = mapper.readValue(new File(loadFile), this.getClass());
         } catch (IOException e) {
             e.printStackTrace();
         }
+        mapper.clearProblemHandlers();
         return scene;
     }
 }

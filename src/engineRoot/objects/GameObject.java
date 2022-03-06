@@ -8,7 +8,7 @@ import java.util.List;
 class GameObject {
 
 
-    @JsonIgnore  private GameObject parent;
+    @JsonIgnore private GameObject parent;
     @JsonIgnore private List<GameObject> childs = new ArrayList<GameObject>();
     @JsonIgnore private Mesh mesh;
     private Transform transform;
