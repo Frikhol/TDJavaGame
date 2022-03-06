@@ -3,6 +3,9 @@ public class Mesh {
     private RawModel rawModel;
     private MeshTexture texture;
 
+    public Mesh() {
+    }
+
     public Mesh(RawModel model, MeshTexture texture){
         this.rawModel = model;
         this.texture = texture;
@@ -23,4 +26,6 @@ public class Mesh {
     public void setTexture(MeshTexture texture) {
         this.texture = texture;
     }
+
+
 }

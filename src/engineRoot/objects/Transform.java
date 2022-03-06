@@ -1,62 +1,89 @@
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joml.Vector3f;
 
 class Transform {
+    @JsonIgnoreProperties({"finite"})
     private Vector3f position;
+    @JsonIgnoreProperties({"finite"})
     private Vector3f rotation;
     private float scale;
-    Transform(Vector3f position, Vector3f rotation) {
+
+    public Transform() {
+    }
+
+    public Transform(Vector3f position, Vector3f rotation, float scale) {
+        this.position = position;
+        this.rotation = rotation;
+        this.scale = scale;
+    }
+
+    public Transform(Vector3f position, Vector3f rotation) {
         this.position = position;
         this.rotation = rotation;
         this.scale = 1;
     }
 
-    void rotate(Vector3f rotation){
-        this.rotation.x += rotation.x;
-        this.rotation.y += rotation.y;
-        this.rotation.z += rotation.z;
+    public void rotate(Vector3f rotation){
+        if((this.rotation.x += rotation.x) > 360.0f)
+            this.rotation.x -= 360.0f;
+        if((this.rotation.y += rotation.y) > 360.0f)
+            this.rotation.y -= 360.0f;
+        if((this.rotation.z += rotation.z) > 360.0f)
+            this.rotation.z -= 360.0f;
     }
 
-    void rotateX(float x){ this.rotation.x += x;}
+    public void rotateX(float x){
+        if((this.rotation.x += x) > 360.0f)
+            this.rotation.x -= 360.0f;
+    }
 
-    void rotateY(float y){ this.rotation.y += y;}
+    public void rotateY(float y){
+        if((this.rotation.y += y) > 360.0f)
+        this.rotation.y -= 360.0f;
+    }
 
-    void rotateZ(float z){ this.rotation.z += z;}
+    public void rotateZ(float z){
+        if((this.rotation.z += z) > 360.0f)
+        this.rotation.z -= 360.0f;
+    }
 
-    void translate(Vector3f translation){
+    public void translate(Vector3f translation){
         this.position.x += translation.x;
         this.position.y += translation.y;
         this.position.z += translation.z;
     }
 
-    void translateX(float x){ this.position.x += x;}
+    public void translateX(float x){ this.position.x += x;}
 
-    void translateY(float y){ this.position.y += y;}
+    public void translateY(float y){ this.position.y += y;}
 
-    void translateZ(float z){ this.position.z += z;}
+    public void translateZ(float z){ this.position.z += z;}
 
-    void scale(float scale){ this.scale *= scale;}
+    public void scale(float scale){ this.scale *= scale;}
 
-    Vector3f getPosition() {
+    public Vector3f getPosition() {
         return position;
     }
 
-    void setPosition(Vector3f position) {
+    public void setPosition(Vector3f position) {
         this.position = position;
     }
 
-    Vector3f getRotation() {
+    public Vector3f getRotation() {
         return rotation;
     }
 
-    void setRotation(Vector3f rotation) {
+    public void setRotation(Vector3f rotation) {
         this.rotation = rotation;
     }
 
-    float getScale() {
+    public float getScale() {
         return scale;
     }
 
-    void setScale(float scale) {
+    public void setScale(float scale) {
         this.scale = scale;
     }
+
+
 }

@@ -7,10 +7,16 @@ import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL11.GL_FRONT_AND_BACK;
 
 public class GUI {
+
     private List<GUITexture> textureList;
     private static int polygonMode = GL_FILL;
+
     public GUI(){
         textureList = new LinkedList<>();
+    }
+
+    public GUI(List<GUITexture> textureList) {
+        this.textureList = textureList;
     }
 
     public List<GUITexture> getGUIList() {
