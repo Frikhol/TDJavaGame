@@ -15,6 +15,7 @@ public class Scene {
     private GUI currentGUI;
     private Light light;
     private Camera camera;
+    private ObjectMapper mapper = new ObjectMapper();
     @JsonIgnore
     private KeyList keyList = null;
 
@@ -89,24 +90,20 @@ public class Scene {
     }
 
     public void saveScene(String saveFile){
-        ObjectMapper mapper = new ObjectMapper();
         try {
             mapper.writeValue(new File(saveFile), this);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        mapper.clearProblemHandlers();
     }
 
     public Scene loadScene(String loadFile){
-        ObjectMapper mapper = new ObjectMapper();
         Scene scene = new Scene();
         try {
             scene = mapper.readValue(new File(loadFile), this.getClass());
         } catch (IOException e) {
             e.printStackTrace();
         }
-        mapper.clearProblemHandlers();
         return scene;
     }
 }

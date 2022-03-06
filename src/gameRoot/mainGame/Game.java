@@ -45,7 +45,7 @@ public class Game {
                 scene.saveScene("res/saves/" + saveFile + ".json");
             else
                 scene.saveScene("res/saves/" + saveFile);
-            JOptionPane.showMessageDialog(intro, "Решение сохранено");
+            JOptionPane.showMessageDialog(intro, "Saving success");
         }
     }
 

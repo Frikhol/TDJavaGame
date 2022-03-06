@@ -33,7 +33,7 @@ public class IntroMenu extends JFrame implements IntroMenuI {
             int status = fileChooser.showOpenDialog(this);
             if (status == JFileChooser.APPROVE_OPTION) {
                 sceneFile = fileChooser.getSelectedFile().toString().substring(fileChooser.getSelectedFile().toString().indexOf("res\\"));
-                currentSceneLabel.setText("Current scene: " + sceneFile);
+                currentSceneLabel.setText("Current scene: " + sceneFile.substring(sceneFile.lastIndexOf("\\")+1,sceneFile.indexOf(".json")));
                 loaded = true;
             } else if (status == JFileChooser.CANCEL_OPTION) {
                 JOptionPane.showMessageDialog(this, "Choose file to load");
