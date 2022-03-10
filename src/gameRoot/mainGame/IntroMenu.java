@@ -4,9 +4,7 @@ import java.awt.event.WindowEvent;
 
 public class IntroMenu extends JFrame implements IntroMenuI {
     private String sceneFile = "";
-    public boolean loaded = false;
-    public boolean played = false;
-    private Game game= new Game();
+    private boolean loaded = false;
     public IntroMenu(){
         super("IntroMenu");
         setSize(512,256);
@@ -52,9 +50,8 @@ public class IntroMenu extends JFrame implements IntroMenuI {
         if(!loaded)
             JOptionPane.showMessageDialog(this, "Must to load scene before!");
         else {
-            played = true;
             setVisible(false);
-            new Thread(game).start();
+            new Thread(new Game()).start();
         }
     }
 }
