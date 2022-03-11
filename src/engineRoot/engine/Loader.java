@@ -20,14 +20,14 @@ public class Loader {
 
 
 
-    public RawModel loadToVAO(float[] positions,int[] indices,float[] textureCoords,float[] normals){
+    public Mesh loadToVAO(float[] positions, int[] indices, float[] textureCoords, float[] normals){
         int vaoID = createVAO();
         bindIndicesBuffer(indices);
         storeDataInAttributeList(0,3,positions);
         storeDataInAttributeList(1,2,textureCoords);
         storeDataInAttributeList(2,3,normals);
         unbindVAO();
-        return new RawModel(vaoID,indices.length);
+        return new Mesh(vaoID,indices.length);
     }
 
     public int loadToVAO(float[] positions,float[] textureCoords){
@@ -38,11 +38,11 @@ public class Loader {
         return vaoID;
     }
 
-    public RawModel loadToVAO(float[] positions){
+    public Mesh loadToVAO(float[] positions){
         int vaoID = createVAO();
         this.storeDataInAttributeList(0,2,positions);
         unbindVAO();
-        return new RawModel(vaoID,positions.length/2);
+        return new Mesh(vaoID,positions.length/2);
     }
 
     public static Texture loadTexture(String fileName){

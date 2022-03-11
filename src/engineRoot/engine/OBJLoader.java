@@ -1,7 +1,6 @@
 import org.joml.Vector2f;
 import org.joml.Vector3f;
 
-import javax.swing.event.ListDataListener;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,7 +11,7 @@ import java.util.List;
 public class OBJLoader {
 
 
-    public static RawModel loadObjModel (String filename,Loader loader){
+    public static Mesh loadObjModel (String filename, Loader loader){
         FileReader fr = null;
         try {
             fr = new FileReader(new File("res/"+filename+".obj"));

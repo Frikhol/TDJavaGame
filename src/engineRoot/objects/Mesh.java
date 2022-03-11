@@ -1,31 +1,29 @@
 public class Mesh {
 
-    private RawModel rawModel;
-    private MeshTexture texture;
+    private int vaoID;
+    private int vertexCount;
 
     public Mesh() {
     }
 
-    public Mesh(RawModel model, MeshTexture texture){
-        this.rawModel = model;
-        this.texture = texture;
+    public Mesh(int vaoID, int vertexCount){
+        this.vaoID = vaoID;
+        this.vertexCount = vertexCount;
     }
 
-    public RawModel getRawModel() {
-        return rawModel;
+    public int getVaoID() {
+        return vaoID;
     }
 
-    public MeshTexture getTexture() {
-        return texture;
+    public int getVertexCount() {
+        return vertexCount;
     }
 
-    public void setRawModel(RawModel rawModel) {
-        this.rawModel = rawModel;
+    public void setVaoID(int vaoID) {
+        this.vaoID = vaoID;
     }
 
-    public void setTexture(MeshTexture texture) {
-        this.texture = texture;
+    public void setVertexCount(int vertexCount) {
+        this.vertexCount = vertexCount;
     }
-
-
 }

@@ -8,7 +8,7 @@ import java.util.List;
 
 public class GUIRenderer {
 
-    private final RawModel quad;
+    private final Mesh quad;
     private GUIShader shader;
 
     public  GUIRenderer(Loader loader){
@@ -17,14 +17,14 @@ public class GUIRenderer {
         shader = new GUIShader();
     }
 
-    public void render(List<GUITexture> guis){
+    public void render(List<GUIObject> guis){
         shader.start();
         GL30.glBindVertexArray(quad.getVaoID());
         GL20.glEnableVertexAttribArray(0);
         GL11.glEnable(GL11.GL_BLEND);
         GL11.glBlendFunc(GL11.GL_SRC_ALPHA,GL11.GL_ONE_MINUS_SRC_ALPHA);
         GL11.glDisable(GL11.GL_DEPTH_TEST);
-        for(GUITexture gui: guis) {
+        for(GUIObject gui: guis) {
             GL13.glActiveTexture(GL13.GL_TEXTURE0);
             GL11.glBindTexture(GL11.GL_TEXTURE_2D,gui.getTextureID());
             Matrix4f matrix = Maths.createTransformationMatrix(gui.getPosition(),gui.getScale());

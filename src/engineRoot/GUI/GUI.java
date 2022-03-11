@@ -8,25 +8,25 @@ import static org.lwjgl.opengl.GL11.GL_FRONT_AND_BACK;
 
 public class GUI {
 
-    private List<GUITexture> textureList;
+    private List<GUIObject> textureList;
     private static int polygonMode = GL_FILL;
 
     public GUI(){
         textureList = new LinkedList<>();
     }
 
-    public GUI(List<GUITexture> textureList) {
+    public GUI(List<GUIObject> textureList) {
         this.textureList = textureList;
     }
 
-    public List<GUITexture> getGUIList() {
+    public List<GUIObject> getGUIList() {
         return textureList;
     }
 
-    public void add(GUITexture texture){
+    public void add(GUIObject texture){
         textureList.add(texture);
     }
-    public void remove(GUITexture texture){
+    public void remove(GUIObject texture){
         textureList.remove(texture);
     }
 

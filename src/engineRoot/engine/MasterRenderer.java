@@ -7,7 +7,7 @@ public class MasterRenderer {
     private  StaticShader shader = new StaticShader();
     private  Renderer renderer = new Renderer(shader);
 
-    private Map<Mesh, List<GameObject>> entities = new HashMap<Mesh, List<GameObject>>();
+    private Map<Model, List<GameObject>> entities = new HashMap<Model, List<GameObject>>();
 
     public void render(Light light,Camera camera){
         shader.start();
@@ -23,7 +23,7 @@ public class MasterRenderer {
     }
 
     public void processEntity(GameObject gameObject){
-        Mesh entityModel = gameObject.getMesh();
+        Model entityModel = gameObject.getModel();
         List<GameObject> batch = entities.get(entityModel);
         if(batch!=null){
             batch.add(gameObject);
