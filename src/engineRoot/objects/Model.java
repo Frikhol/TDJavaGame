@@ -6,8 +6,8 @@ public class Model {
     public Model() {
     }
 
-    public Model(Mesh model, MeshTexture texture){
-        this.mesh = model;
+    public Model(Mesh mesh, MeshTexture texture){
+        this.mesh = mesh;
         this.texture = texture;
     }
 

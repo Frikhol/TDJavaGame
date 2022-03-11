@@ -40,8 +40,7 @@ public class Renderer {
     }
 
     private void prepareTexturedModel(Model model){
-        Mesh mesh = model.getMesh();
-        GL30.glBindVertexArray(mesh.getVaoID());
+        GL30.glBindVertexArray(model.getMesh().getVaoID());
         GL20.glEnableVertexAttribArray(0);
         GL20.glEnableVertexAttribArray(1);
         GL20.glEnableVertexAttribArray(2);

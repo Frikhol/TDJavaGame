@@ -67,7 +67,6 @@ public class Loader {
         GL11.glTexImage2D(GL20.GL_TEXTURE_2D, 0, GL20.GL_RGBA, decoder.getWidth(), decoder.getHeight(), 0, GL20.GL_RGBA, GL20.GL_UNSIGNED_BYTE, buffer);
         GL11.glEnable(GL20.GL_TEXTURE_2D);
         GL30.glGenerateMipmap(GL20.GL_TEXTURE_2D);
-        System.out.println("loaded texture: "+id);
         return new Texture(id);
     }
 

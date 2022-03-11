@@ -10,6 +10,7 @@ public class Game extends GameEngine implements Runnable{
     private static IntroMenu intro;
 
     public static void main(String[] args){
+
         intro = new IntroMenu();
     }
 
@@ -19,7 +20,7 @@ public class Game extends GameEngine implements Runnable{
         getCurrentScene().setKeyList(new TestControls());
         FontType font = new FontType(Loader.loadTexture("calibri.png").getId(),new File("res/calibri.fnt"));
         GUIText text = new GUIText("FPS: "+ GameDisplay.getFPS(),1,font,new Vector2f((float)(GameDisplay.getWIDTH()[0]-(GameDisplay.getWIDTH()[0]/16))/GameDisplay.getWIDTH()[0],(float)(GameDisplay.getHEIGHT()[0]/64)/GameDisplay.getHEIGHT()[0]),(float)(GameDisplay.getWIDTH()[0]/16)/GameDisplay.getWIDTH()[0],true);
-        System.out.println(GameDisplay.getID());
+
         //Main game loop
         while(!glfwWindowShouldClose(GameDisplay.getID())){
             text = text.updateText("FPS: "+GameDisplay.getFPS());

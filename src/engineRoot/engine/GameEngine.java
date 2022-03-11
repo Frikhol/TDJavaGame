@@ -23,10 +23,6 @@ public class GameEngine {
         return loader;
     }
 
-    public static void setCurrentScene(Scene scene) {
-        GameEngine.scene = scene;
-    }
-
     public static void start(){
         GameDisplay.create();
         loader = new Loader();
