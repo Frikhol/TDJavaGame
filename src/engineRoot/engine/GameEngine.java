@@ -1,7 +1,8 @@
-import org.joml.Vector2f;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.lwjgl.glfw.GLFWWindowSizeCallback;
 
 import java.io.File;
+import java.io.IOException;
 
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.glfw.GLFW.glfwSetKeyCallback;
@@ -9,12 +10,10 @@ import static org.lwjgl.opengl.GL11.*;
 
 public class GameEngine {
 
-
     private static Loader loader;
     private static MasterRenderer renderer;
     private static GUIRenderer guiRenderer;
     private static Scene scene;
-
 
     public static Scene getCurrentScene() {
         return scene;
@@ -22,10 +21,6 @@ public class GameEngine {
 
     public static Loader getLoader() {
         return loader;
-    }
-
-    public static void setCurrentScene(Scene scene) {
-        GameEngine.scene = scene;
     }
 
     public static void start(){
@@ -69,6 +64,24 @@ public class GameEngine {
             }
         };
         glfwSetWindowSizeCallback(GameDisplay.getID(), sizeCallback);
+    }
+
+    public static void saveScene(String saveFile){
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            mapper.writeValue(new File(saveFile), scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void loadScene(String loadFile){
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            scene = mapper.readValue(new File(loadFile), Scene.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void stop(){

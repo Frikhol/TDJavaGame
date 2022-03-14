@@ -27,32 +27,31 @@ public class Renderer {
         shader.stop();
     }
 
-    public void render(Map<Mesh, List<GameObject>> gameObjects){
-        for(Mesh model: gameObjects.keySet()){
+    public void render(Map<Model, List<GameObject>> gameObjects){
+        for(Model model: gameObjects.keySet()){
             prepareTexturedModel(model);
             List<GameObject> batch = gameObjects.get(model);
             for(GameObject gameObject :batch){
                 prepareInstance((gameObject));
-                GL11.glDrawElements(GL11.GL_TRIANGLES,model.getRawModel().getVertexCount(),GL11.GL_UNSIGNED_INT,0);
+                GL11.glDrawElements(GL11.GL_TRIANGLES,model.getMesh().getVertexCount(),GL11.GL_UNSIGNED_INT,0);
             }
             unbindTexturedModel();
         }
     }
 
-    private void prepareTexturedModel(Mesh mesh){
-        RawModel rawModel = mesh.getRawModel();
-        GL30.glBindVertexArray(rawModel.getVaoID());
+    private void prepareTexturedModel(Model model){
+        GL30.glBindVertexArray(model.getMesh().getVaoID());
         GL20.glEnableVertexAttribArray(0);
         GL20.glEnableVertexAttribArray(1);
         GL20.glEnableVertexAttribArray(2);
-        MeshTexture texture = mesh.getTexture();
+        MeshTexture texture = model.getTexture();
         shader.loadShineVariables(texture.getShineDamper(),texture.getReflectivity());
-        GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MAG_FILTER, GL11.GL_LINEAR);
+        /*GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MAG_FILTER, GL11.GL_LINEAR);
         GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER, GL11.GL_LINEAR);
         GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_WRAP_S, GL11.GL_REPEAT);
-        GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_WRAP_T, GL11.GL_REPEAT);
+        GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_WRAP_T, GL11.GL_REPEAT);*/
         GL13.glActiveTexture(GL13.GL_TEXTURE0);
-        GL11.glBindTexture(GL11.GL_TEXTURE_2D,mesh.getTexture().getID());
+        GL11.glBindTexture(GL11.GL_TEXTURE_2D, model.getTexture().getID());
     }
 
     private void unbindTexturedModel(){

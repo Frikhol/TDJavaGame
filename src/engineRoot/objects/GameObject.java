@@ -1,5 +1,4 @@
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import org.joml.Vector3f;
 
 import java.util.ArrayList;
@@ -10,7 +9,7 @@ class GameObject {
 
     @JsonIgnore private GameObject parent;
     @JsonIgnore private List<GameObject> childs = new ArrayList<GameObject>();
-    @JsonIgnore private Mesh mesh;
+    @JsonIgnore private Model model;
     private Transform transform;
     private String modelName;
     private String textureName;
@@ -18,22 +17,22 @@ class GameObject {
     public GameObject() {
     }
 
-    public GameObject(Mesh mesh) {
-        this.mesh = mesh;
+    public GameObject(Model model) {
+        this.model = model;
         this.transform = new Transform(new Vector3f(0,0,0),new Vector3f(0,0,0));
     }
 
     public GameObject(String modelName, String textureName,Transform transform) {
-        this(new Mesh(OBJLoader.loadObjModel(modelName,GameEngine.getLoader()),new MeshTexture(Loader.loadTexture(textureName+".png").getId())));
+        this(new Model(OBJLoader.loadObjModel(modelName,GameEngine.getLoader()),new MeshTexture(Loader.loadTexture(textureName+".png").getId())));
         this.modelName = modelName;
         this.textureName = textureName;
         this.transform = transform;
     }
 
-    public GameObject(GameObject parent, List<GameObject> childs, Mesh mesh, Transform transform) {
+    public GameObject(GameObject parent, List<GameObject> childs, Model model, Transform transform) {
         this.parent = parent;
         this.childs = childs;
-        this.mesh = mesh;
+        this.model = model;
         this.transform = transform;
     }
 
@@ -103,12 +102,12 @@ class GameObject {
         this.transform = transform;
     }
 
-    public Mesh getMesh() {
-        return mesh;
+    public Model getModel() {
+        return model;
     }
 
-    public void setMesh(Mesh mesh) {
-        this.mesh = mesh;
+    public void setModel(Model model) {
+        this.model = model;
     }
 
     public GameObject getParent() {

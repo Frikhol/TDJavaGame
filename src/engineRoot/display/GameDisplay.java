@@ -77,7 +77,6 @@ public class GameDisplay {
             GameDisplay.setFPS(FPS);
             GameDisplay.setFps(0);
             glfwSetTime(0);
-            //System.out.println("FPS: "+FPS);
         }
         GameDisplay.setFps(GameDisplay.getFps()+1);
     }
@@ -85,7 +84,6 @@ public class GameDisplay {
     public static void setFPSCup(int cup){
         double lastTime = glfwGetTime();
         while(glfwGetTime() < lastTime+1.0/cup){}
-        lastTime += 1.0/cup;
     }
 
     public static float deltaTime(){

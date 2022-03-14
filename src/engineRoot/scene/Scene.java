@@ -1,9 +1,5 @@
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
-
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,8 +11,6 @@ public class Scene {
     private GUI currentGUI;
     private Light light;
     private Camera camera;
-    @JsonIgnore
-    private ObjectMapper mapper = new ObjectMapper();
     @JsonIgnore
     private KeyList keyList = null;
 
@@ -88,23 +82,5 @@ public class Scene {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void saveScene(String saveFile){
-        try {
-            mapper.writeValue(new File(saveFile), this);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public Scene loadScene(String loadFile){
-        Scene scene = new Scene();
-        try {
-            scene = mapper.readValue(new File(loadFile), this.getClass());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return scene;
     }
 }
