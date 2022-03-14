@@ -4,8 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72660347-041f-4f15-8e16-2b8ada8c5c60" name="Default Changelist" comment="бэкапп">
+    <list default="true" id="72660347-041f-4f15-8e16-2b8ada8c5c60" name="Default Changelist" comment="отредактил итрро меню">
+      <change afterPath="$PROJECT_DIR$/src/gameRoot/mainGame/Effect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gameRoot/mainGame/Effectible.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gameRoot/mainGame/Enemy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gameRoot/mainGame/EnemyEffect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gameRoot/mainGame/Tower.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gameRoot/mainGame/TowerEffect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gameRoot/mainGame/Track.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/saves/save.json" beforeDir="false" afterPath="$PROJECT_DIR$/res/saves/save.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/saves/save1.json" beforeDir="false" afterPath="$PROJECT_DIR$/res/saves/save1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameRoot/mainGame/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameRoot/mainGame/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameRoot/mainGame/IntroMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameRoot/mainGame/IntroMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Camera.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GameDisplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GameDisplay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GameEngine$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GameEngine$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GameEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GameEngine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GameObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/KeyboardInput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Light.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Light.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Loader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Loader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MasterRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MasterRenderer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Maths.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Maths.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Mesh.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Mesh.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MeshTexture.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MeshTexture.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ModelTexture.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OBJLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/OBJLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/RawModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/RawModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Renderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Renderer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Scene.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Scene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ShaderProgram.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ShaderProgram.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/StaticShader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/StaticShader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Texture.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Texture.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TexturedModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Transform.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Transform.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fragmentShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fragmentShader.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vertexShader.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +55,7 @@
       <list>
         <option value="package-info" />
         <option value="JavaFXApplication" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -30,9 +69,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="25KcCXRbBJh1ZFKM5wPU6LSh5Wb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TWMPv4/TWMPv4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -49,7 +94,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Game">
+  <component name="RunManager" selected="Application.Track">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Game" />
       <module name="Game" />
@@ -64,13 +109,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Track" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Track" />
+      <module name="Game" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Track" />
         <item itemvalue="Application.Game" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -82,6 +136,21 @@
       <option name="presentableId" value="Default" />
       <updated>1645279091934</updated>
     </task>
+    <task id="LOCAL-00001" summary="display 1/">
+      <created>1646584164691</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1646584164691</updated>
+    </task>
+    <task id="LOCAL-00002" summary="отредактил итрро меню">
+      <created>1646586625132</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1646586625132</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -95,7 +164,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/GameRep" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -107,5 +176,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test commit" />
+    <MESSAGE value="display 1/" />
+    <MESSAGE value="отредактил итрро меню" />
+    <option name="LAST_COMMIT_MESSAGE" value="отредактил итрро меню" />
   </component>
 </project>
