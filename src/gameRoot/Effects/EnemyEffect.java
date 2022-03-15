@@ -14,6 +14,27 @@ public abstract class EnemyEffect extends Effect{
             super("slow", power, time, "move_speed",source, enemy);
         }
     }
+
+    public static class EffectPoison extends EnemyEffect{
+        EffectPoison(float power, float time, String source, Enemy enemy) {
+            super("poison", power, time, "time_damage",source, enemy);
+        }
+    }
+    public static class EffectFire extends EnemyEffect{
+        EffectFire(float power, float time, String source, Enemy enemy) {
+            super("fire", power, time, "time_damage",source, enemy);
+        }
+    }
+    public static class EffectCrash extends EnemyEffect{
+        EffectCrash(float power, float time, String source, Enemy enemy) {
+            super("break_armor", power, time, "resist",source, enemy);
+        }
+    }
+    public static class EffectHealthUp extends EnemyEffect{
+        EffectHealthUp(float power, float time, String source, Enemy enemy) {
+            super("health_buff", power, time, "stamina",source, enemy);
+        }
+    }
     /////////////////////////tags///////////////////////////
     //move_speed    // замедление/ускорение/стан
     //time_damage   // урон(яд/ожог)

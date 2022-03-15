@@ -7,10 +7,6 @@ public class Enemy extends GameObject implements Effectible{
     private Track track;
     private float speed;
 
-
-
-
-
     public Enemy(float health, float positionOnTrack, Track track, float speed, float resist) {
         this.health = health;
         this.positionOnTrack = positionOnTrack;

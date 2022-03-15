@@ -10,7 +10,6 @@ public class Game extends GameEngine implements Runnable{
     private static IntroMenu intro;
 
     public static void main(String[] args){
-
         intro = new IntroMenu();
     }
 
